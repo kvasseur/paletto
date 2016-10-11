@@ -15,3 +15,17 @@ PalettoTestCase.prototype.testStory1 = function () {
     assertEquals(tab[5],  ["yellow", "blue", "black", "red", "green", "black"]);
     
 };
+
+PalettoTestCase.prototype.testStory2 = function () {
+
+    var test = Engine.play();
+    assertEquals(test, "yellow");
+
+};
+
+/*PalettoTestCase.prototype.testStory3 = function () {
+
+    var test = Engine.play();
+    assertEquals(test, "yellow");
+
+};*/
