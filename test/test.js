@@ -17,8 +17,8 @@ PalettoTestCase.prototype.testStory1 = function () {
 
 PalettoTestCase.prototype.testStory2 = function () {
 
-    var test = Engine.play("A6");
-    Engine.remove("A6");
+    var test = Engine.play(["A6"]);
+    Engine.remove(["A6"]);
     
     var nb = Engine.nb_colors();
     
@@ -30,7 +30,7 @@ PalettoTestCase.prototype.testStory2 = function () {
 
 PalettoTestCase.prototype.testStory3 = function () {
 
-    Engine.remove("A6");
+    Engine.remove(["A6"]);
     var nb = Engine.nb_colors();
     assertEquals(nb, 35);
 
@@ -39,11 +39,11 @@ PalettoTestCase.prototype.testStory3 = function () {
 PalettoTestCase.prototype.testStory4 = function () {
     Engine.change_player();
     
-    Engine.play("A1");
-    Engine.play("F6");
+    Engine.play(["A1"]);
+    Engine.play(["F6"]);
     
-    Engine.remove("A1");
-    Engine.remove("F6");
+    Engine.remove(["A1"]);
+    Engine.remove(["F6"]);
 
     var test = Engine.nb_colors();
     /*for(var i = 0; i<10; i++){

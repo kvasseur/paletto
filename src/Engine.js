@@ -34,24 +34,27 @@ var Engine =  {
 
     play:function (coordinates) {
         
+    
+        for(var i = 0; i<coordinates.length; i++){
 
-        var x = coordinates.charCodeAt(0) - 65;
-        var y = coordinates.charAt(1) - 1;
+            var x = coordinates[i].charCodeAt(0) - 65;
+            var y = coordinates[i].charAt(1) - 1;
 
-        var color = Engine.board[y][x];
+            var color = Engine.board[y][x];
 
-        if(Engine.current_player == 1 && Engine.board[y][x]!= null) {
+            if (Engine.current_player == 1 && Engine.board[y][x] != null) {
 
-            Engine.tab_player1.push(color);
+                Engine.tab_player1.push(color);
+
+            }
+
+            if (Engine.current_player == 2 && Engine.board[y][x] != null) {
+
+                Engine.tab_player2.push(color);
+
+            }
 
         }
-
-        if(Engine.current_player == 2 && Engine.board[y][x]!= null) {
-
-            Engine.tab_player2.push(color);
-
-        }
-        
 
         return Engine.tab_player1[0];
 
@@ -59,11 +62,13 @@ var Engine =  {
 
     remove:function (coordinates) {
         
+        for(var i = 0; i<coordinates.length; i++) {
 
-        var x = coordinates.charCodeAt(0) - 65;
-        var y = coordinates.charAt(1) - 1;
-        
-        Engine.board[y][x] = null;
+            var x = coordinates[i].charCodeAt(0) - 65;
+            var y = coordinates[i].charAt(1) - 1;
+
+            Engine.board[y][x] = null;
+        }
 
     },
     
