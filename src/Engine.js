@@ -33,7 +33,10 @@ var Engine =  {
 
 
     play:function (coordinates) {
+
         
+
+        var voisins = Engine.nb_neighbour(coordinates);
     
         for(var i = 0; i<coordinates.length; i++){
 
@@ -42,18 +45,18 @@ var Engine =  {
 
             var color = Engine.board[y][x];
 
-            if (Engine.current_player == 1 && Engine.board[y][x] != null) {
-
+            if (Engine.current_player == 1 && Engine.board[y][x] != null && voisins < 3) {
                 Engine.tab_player1.push(color);
-
             }
 
-            if (Engine.current_player == 2 && Engine.board[y][x] != null) {
-
+            if (Engine.current_player == 2 && Engine.board[y][x] != null && voisins < 3) {
                 Engine.tab_player2.push(color);
-
             }
 
+        }
+        
+        if(voisins > 2){
+            return "fail";
         }
 
         return Engine.tab_player1[0];
@@ -63,7 +66,6 @@ var Engine =  {
     remove:function (coordinates) {
         
         for(var i = 0; i<coordinates.length; i++) {
-
             var x = coordinates[i].charCodeAt(0) - 65;
             var y = coordinates[i].charAt(1) - 1;
 
@@ -87,6 +89,26 @@ var Engine =  {
         return counter;
     },
 
+    nb_neighbour:function (coordinates){
 
+        var counter =0;
+        
+        for(var i = 0; i<coordinates.length; i++) {
+
+            var line =  coordinates[i].charAt(1) -1;
+            var column = coordinates[i].charCodeAt(0)-65;
+
+            if( ((line -1) >= 0) && (Engine.board[line-1][column] != null)){counter ++;}
+
+            if(((line +1) < 6) && (Engine.board[line+1][column] != null)){counter ++;}
+
+            if( ((column -1) >= 0) && (Engine.board[line][column-1] != null)){counter ++;}
+
+            if(((column +1) <7) && (Engine.board[line][column+1] != null)){counter ++;}
+        }
+
+        
+        return counter;
+    }
 
 };

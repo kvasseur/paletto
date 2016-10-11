@@ -67,3 +67,10 @@ PalettoTestCase.prototype.testStory4 = function () {
     assertEquals(nb, 33);
 
 };
+
+/*PalettoTestCase.prototype.testStory5 = function () {
+    
+    
+    var test = Engine.play(["C3"]);
+    assertEquals(test, "fail");
+};*/
