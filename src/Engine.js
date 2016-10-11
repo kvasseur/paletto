@@ -43,15 +43,11 @@ var Engine =  {
             var color = Engine.board[y][x];
 
             if (Engine.current_player == 1 && Engine.board[y][x] != null) {
-
                 Engine.tab_player1.push(color);
-
             }
 
             if (Engine.current_player == 2 && Engine.board[y][x] != null) {
-
                 Engine.tab_player2.push(color);
-
             }
 
         }
@@ -63,7 +59,6 @@ var Engine =  {
     remove:function (coordinates) {
         
         for(var i = 0; i<coordinates.length; i++) {
-
             var x = coordinates[i].charCodeAt(0) - 65;
             var y = coordinates[i].charAt(1) - 1;
 
@@ -87,6 +82,28 @@ var Engine =  {
         return counter;
     },
 
+    nb_neighbour:function (coordinates){
+        var counter =0;
 
+        if((coordinates.charAt(1) - 2) >= 0 && (coordinates.charAt(1)) < 7 ){
+            if((Engine.board[(coordinates.charAt(1) - 2)][coordinates.charCodeAt(0)-65]) != null){
+                counter++;
+            }
+            if((Engine.board[coordinates.charAt(1)][coordinates.charCodeAt(0)-65]) != null){
+                counter++;
+            }
+        }
+
+        if(((coordinates.charCodeAt(0) - 65) - 1) >= 0 && ((coordinates.charCodeAt(0)-65)+1) < 7){
+            if((Engine.board[(coordinates.charAt(1) - 1)][((coordinates.charCodeAt(0)-65)-1)]) != null){
+                counter++;
+            }
+            if((Engine.board[(coordinates.charAt(1) - 1)][((coordinates.charCodeAt(0)-65)+1)]) != null){
+                counter++;
+            }
+        }
+
+        return counter;
+    }
 
 };
