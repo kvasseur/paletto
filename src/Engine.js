@@ -38,19 +38,18 @@ var Engine =  {
         var x = coordinates.charCodeAt(0) - 65;
         var y = coordinates.charAt(1) - 1;
 
-        var couleur = Engine.board[y][x];
+        var color = Engine.board[y][x];
 
         if(Engine.current_player == 1 && Engine.board[y][x]!= null) {
 
-            Engine.tab_player1.push(couleur);
-            
+            Engine.tab_player1.push(color);
 
         }
 
         if(Engine.current_player == 2 && Engine.board[y][x]!= null) {
 
-            Engine.tab_player2.push(couleur);
-            
+            Engine.tab_player2.push(color);
+
         }
         
 
@@ -65,26 +64,23 @@ var Engine =  {
         var y = coordinates.charAt(1) - 1;
         
         Engine.board[y][x] = null;
-        
-        
+
     },
     
-    nb_couleurs:function () {
-        var compteur = 0;
+    nb_colors:function () {
+
+        var counter = 0;
         
         for(var i=0; i<6; i++){
             for(var j=0; j<7; j++){
                 if(Engine.board[i][j] != null){
-                    compteur++;
+                    counter++;
                 }
             }
         }
 
-        return compteur;
-    }
-
-
-
+        return counter;
+    },
 
 
 
