@@ -23,9 +23,9 @@ PalettoTestCase.prototype.testStory2 = function () {
 
 };
 
-/*PalettoTestCase.prototype.testStory3 = function () {
+PalettoTestCase.prototype.testStory3 = function () {
 
-    var test = Engine.play();
-    assertEquals(test, "yellow");
+    var test = Engine.remove();
+    assertEquals(test, 35);
 
-};*/
+};
