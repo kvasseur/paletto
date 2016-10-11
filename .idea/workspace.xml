@@ -27,8 +27,8 @@
       <file leaf-file-name="Engine.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -37,8 +37,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="84" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
+            <state relative-caret-position="315">
+              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -52,8 +52,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Engine.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/src/Engine.js" />
       </list>
     </option>
   </component>
@@ -232,47 +232,47 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1476174823990</updated>
-      <workItem from="1476174825109" duration="5976000" />
+      <workItem from="1476174825109" duration="8368000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 49m 45s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 38m 41s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 50m 37s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 39m 41s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 54m 18s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 40m 24s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 54m 34s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 40m 48s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 54m 41s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 41m 32s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 54m 51s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 42m 36s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 56m 08s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 42m 43s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 56m 39s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 44m 32s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 56m 53s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 44m 45s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="jsTestDriver_conf - 2016.10.11 at 11h 57m 04s.xml">
+    <history-entry file="jsTestDriver_conf - 2016.10.11 at 13h 47m 17s.xml">
       <configuration name="jsTestDriver.conf" configurationId="JsTestDriver-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5976000" />
+    <option name="totallyTimeSpent" value="8368000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="748" y="52" width="1050" height="996" extended-state="0" />
+    <frame x="748" y="52" width="1050" height="996" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24926972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -308,16 +308,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="84" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
+        <state relative-caret-position="315">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
