@@ -24,7 +24,7 @@ PalettoTestCase.prototype.testStory2 = function () {
     
     assertEquals(test, "yellow");
     assertEquals(nb, 35);
-    
+
     
 };
 
