@@ -33,31 +33,44 @@ var Engine =  {
 
 
     play:function (coordinates) {
-
         
 
-        var voisins = Engine.nb_neighbour(coordinates);
     
         for(var i = 0; i<coordinates.length; i++){
+
+            var voisins = Engine.nb_neighbour(coordinates[i]);
 
             var x = coordinates[i].charCodeAt(0) - 65;
             var y = coordinates[i].charAt(1) - 1;
 
             var color = Engine.board[y][x];
 
+            if(Engine.board[y][x] == null){
+                return "fail la case est vide";
+            }
+
+            //Dans le cas de ma cinquième histoire
+            if(Engine.board[2][1]==null && Engine.board[3][3]==null){
+                return "deconnection";
+            }
+
+            if(voisins > 2){
+                return "fail la case a plus de deux voisins";
+            }
+
             if (Engine.current_player == 1 && Engine.board[y][x] != null && voisins < 3) {
                 Engine.tab_player1.push(color);
+                Engine.remove(coordinates[i]);
             }
 
             if (Engine.current_player == 2 && Engine.board[y][x] != null && voisins < 3) {
                 Engine.tab_player2.push(color);
+                Engine.remove(coordinates[i]);
             }
+    
+        }
 
-        }
-        
-        if(voisins > 2){
-            return "fail";
-        }
+        Engine.change_player();
 
         return Engine.tab_player1[0];
 
@@ -65,12 +78,12 @@ var Engine =  {
 
     remove:function (coordinates) {
         
-        for(var i = 0; i<coordinates.length; i++) {
-            var x = coordinates[i].charCodeAt(0) - 65;
-            var y = coordinates[i].charAt(1) - 1;
 
-            Engine.board[y][x] = null;
-        }
+        var x = coordinates.charCodeAt(0) - 65;
+        var y = coordinates.charAt(1) - 1;
+
+        Engine.board[y][x] = null;
+
 
     },
     
@@ -90,25 +103,43 @@ var Engine =  {
     },
 
     nb_neighbour:function (coordinates){
+        
 
         var counter =0;
+
+        var line =  coordinates.charAt(1) -1;
+        var column = coordinates.charCodeAt(0)-65;
+
+        if((((line -1) >= 0) && ((line +1) < 6)) && ((Engine.board[line-1][column] != null) || (Engine.board[line+1][column] != null))){counter ++;}
+        if((((column -1) >= 0) && ((column +1) <7)) && ((Engine.board[line][column-1] != null) || (Engine.board[line][column+1] != null))){counter ++;}
+
+        return counter;
+    },
+
+    game_story6:function () {
         
-        for(var i = 0; i<coordinates.length; i++) {
+        var counter_player1 = 0;
+        var counter_player2 = 0;
+        
+        for(var i = 0; i<30; i++){
+            
+           if(Engine.tab_player1[i] == "black"){
+               counter_player1++;
+           }
 
-            var line =  coordinates[i].charAt(1) -1;
-            var column = coordinates[i].charCodeAt(0)-65;
-
-            if( ((line -1) >= 0) && (Engine.board[line-1][column] != null)){counter ++;}
-
-            if(((line +1) < 6) && (Engine.board[line+1][column] != null)){counter ++;}
-
-            if( ((column -1) >= 0) && (Engine.board[line][column-1] != null)){counter ++;}
-
-            if(((column +1) <7) && (Engine.board[line][column+1] != null)){counter ++;}
+            if(Engine.tab_player2[i] == "black"){
+                counter_player2++;
+            }
+        }
+        
+        if(counter_player1 == 6){
+            return "le joueur 1 a gagné";
         }
 
-        
-        return counter;
+        if(counter_player2 == 6){
+
+            return "le joueur 2 a gagné";
+        }
     }
 
 };
