@@ -82,24 +82,11 @@ PalettoTestCase.prototype.testStory5 = function () {
 
 PalettoTestCase.prototype.testStory6 = function () {
 
-   Engine.init_game();
+    
 
-    Engine.tab_player1=[];
-    Engine.tab_player2=[];
-
-    Engine.play(["A1", "F6"]);
-    Engine.play(["B1", "E6", "F5"]);
-    Engine.play(["A2", "A6"]);
-    Engine.play(["A3"]);
-    Engine.play(["A5", "F4","F1","C1"]);
-    Engine.play(["E1", "F3","D6","A4"]);
-    Engine.play(["D3", "F2","B6"]);
-    Engine.play(["B3", "E2","E5"]);
-    Engine.play(["B4", "C6", "D5","E3"]);
-
-    for(var i = 0; i<Engine.tab_player1.length; i++){
+    /*for(var i = 0; i<Engine.tab_player1.length; i++){
         console.log(Engine.tab_player1[i]);
-    }
+    }*/
 
     /*var j = 0; j<Engine.tab_player2.length; j++){
         console.log(Engine.tab_player2[j]);
@@ -108,6 +95,46 @@ PalettoTestCase.prototype.testStory6 = function () {
     var test = Engine.game_story6();
 
     assertEquals(test, "le joueur 1 a gagné");
+
+
+};
+
+PalettoTestCase.prototype.testStory7 = function () {
+
+    Engine.init_game();
+
+    Engine.play(["A1", "F6"]);
+    Engine.play(["A2", "A6"]);
+    Engine.play(["A5", "F6"]);
+    Engine.play(["E6", "B1","F5"]);
+    Engine.play(["A3","F2"]);
+    Engine.play(["C1", "F4"]);
+    Engine.play(["E1", "D6","A4","F3"]);
+    Engine.play(["D1", "B6"]);
+    Engine.play(["E2", "E5"]);
+    Engine.play(["C6", "D5","E3"]);
+    Engine.play(["B5"]);
+    Engine.play(["D2"]);
+    Engine.play(["B2", "D3"]);
+    Engine.play(["E4"]);
+    Engine.play(["C5", "B3"]);
+    Engine.play(["D4", "C2"]);
+    Engine.play(["C3"]);
+    Engine.play(["B4"]);
+    Engine.play(["C4"]);
+
+    /*for(var i = 0; i<Engine.tab_player1.length; i++){
+        console.log(Engine.tab_player1[i]);
+    }*/
+
+    /*var j = 0; j<Engine.tab_player2.length; j++){
+     console.log(Engine.tab_player2[j]);
+     }*/
+
+
+    var test = Engine.game_story7();
+
+    assertEquals(test, 36);
 
 
 };

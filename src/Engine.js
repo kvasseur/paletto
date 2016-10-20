@@ -8,7 +8,9 @@ var Engine =  {
     tab_player2 : [],
 
     init_game:function () {
-
+        Engine.current_player=1;
+        Engine.tab_player1=[];
+        Engine.tab_player2=[];
         Engine.board[0] = ["black", "green", "white", "blue", "red", "white"];
         Engine.board[1] = ["yellow", "white", "green", "red", "yellow", "blue"];
         Engine.board[2] = ["blue", "yellow", "blue", "white", "black", "red"];
@@ -67,7 +69,7 @@ var Engine =  {
                 Engine.tab_player2.push(color);
                 Engine.remove(coordinates[i]);
             }
-    
+
         }
 
         Engine.change_player();
@@ -102,22 +104,48 @@ var Engine =  {
         return counter;
     },
 
-    nb_neighbour:function (coordinates){
-        
+    nb_neighbour:function (coordinates) {
 
-        var counter =0;
+        var counter = 0;
 
-        var line =  coordinates.charAt(1) -1;
-        var column = coordinates.charCodeAt(0)-65;
+        var line = coordinates.charAt(1) - 1;
+        var column = coordinates.charCodeAt(0) - 65;
 
-        if((((line -1) >= 0) && ((line +1) < 6)) && ((Engine.board[line-1][column] != null) || (Engine.board[line+1][column] != null))){counter ++;}
-        if((((column -1) >= 0) && ((column +1) <7)) && ((Engine.board[line][column-1] != null) || (Engine.board[line][column+1] != null))){counter ++;}
+        if((((line -1) >= 0) || ((line-1)==undefined)) && (((line +1) < 6) || ((line+1)==undefined))){
+            if ((Engine.board[line - 1][column] != null) || (Engine.board[line - 1][column] == undefined)) {
+                if ((Engine.board[line + 1][column] != null) || (Engine.board[line + 1][column] == undefined)) {
+                    counter++;
+                }
+            }
+        }
 
+        if((((column -1) >= 0) || ((column-1)==undefined)) && (((column +1) < 6) || ((column+1)==undefined))){
+            if ((Engine.board[line][column - 1] != null) || (Engine.board[line][column - 1] == undefined)){
+                if((Engine.board[line][column + 1] != null) || (Engine.board[line][column + 1] == undefined)){
+                    counter++;
+                }
+            }
+        }
+
+        console.log(" --> l" + line + " c" + column + " = " + counter);
         return counter;
     },
 
     game_story6:function () {
-        
+        Engine.init_game();
+
+        Engine.tab_player1=[];
+        Engine.tab_player2=[];
+
+        Engine.play(["A1", "F6"]);
+        Engine.play(["B1", "E6", "F5"]);
+        Engine.play(["A2", "A6"]);
+        Engine.play(["A3"]);
+        Engine.play(["A5", "F4","F1","C1"]);
+        Engine.play(["E1", "F3","D6","A4"]);
+        Engine.play(["D3", "F2","B6"]);
+        Engine.play(["B3", "E2","E5"]);
+        Engine.play(["B4", "C6", "D5","E3"]);
         var counter_player1 = 0;
         var counter_player2 = 0;
         
@@ -140,6 +168,26 @@ var Engine =  {
 
             return "le joueur 2 a gagné";
         }
+    },
+
+    game_story7:function () {
+        
+        var count = 0;
+        
+        for(var i=0; i<6; i++) {
+            for (var j = 0; j < 6; j++) {
+                
+                if (Engine.board[i][j] == null) {
+                    count++;
+                }
+            }
+        }
+        
+        if(count == 36){
+            return Engine.current_player;
+        }
+
+        return count;
     }
 
 };
